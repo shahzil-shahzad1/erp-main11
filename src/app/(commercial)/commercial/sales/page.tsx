@@ -1,5 +1,5 @@
 import AnimatedBorder from "@/components/commercial/AnimatedBorder";
-import { ShoppingCart, Users, DollarSign, User } from "lucide-react";
+import { ShoppingCart, Users, DollarSign } from "lucide-react";
 import { BlocksIcon } from "lucide-react";
 import { SalesDepartment } from "@/components/commercial/Searchbar";
 
