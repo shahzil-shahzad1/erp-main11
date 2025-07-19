@@ -1,5 +1,5 @@
 'use client'
-import { Search, Plus, Filter, ChevronDown } from "lucide-react";
+import { Search, Plus, Filter } from "lucide-react";
 import { useState } from "react";
 
 export function SalesDepartment() {
