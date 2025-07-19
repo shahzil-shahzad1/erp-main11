@@ -1,5 +1,5 @@
 "use client"
-import { Home, Users, Box, ShoppingCart, FileText, PieChart, Settings, ChevronRight, Menu } from "lucide-react";
+import { Home, Users, Box, ShoppingCart, ChevronRight, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Sidebar() {
