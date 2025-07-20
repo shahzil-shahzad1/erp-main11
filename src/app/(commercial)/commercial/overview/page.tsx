@@ -1,6 +1,6 @@
 import React from 'react';
 // Importing Lucide React icons
-import { Building, DollarSign, Blocks, ShoppingCart, Wallet, Package, LineChart } from 'lucide-react';
+import { Building, DollarSign, Blocks, ShoppingCart, Package, LineChart } from 'lucide-react'; // Removed 'Wallet' as it was unused
 
 // Main App component
 export default function App() {
@@ -64,7 +64,8 @@ export default function App() {
   ];
 
   return (
-    // Tailwind CSS script for CDN
+    // Tailwind CSS script for CDN - Note: In a Next.js project, Tailwind should be configured via build tools.
+    // This CDN script is used here for simplicity in the Canvas environment.
     <>
       <script src="https://cdn.tailwindcss.com"></script>
       <div className="bg-[#121111] min-h-screen p-6 md:p-10 text-white font-sans">
