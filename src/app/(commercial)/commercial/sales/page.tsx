@@ -5,6 +5,16 @@ import React, { useState } from 'react';
 // Removed unused Lucide icons to resolve compilation errors/warnings
 import { Search, Plus, Mail, Phone, User, CheckCircle, XCircle, Clock } from 'lucide-react';
 
+// Define the interface for SalesRepresentativeCard props
+interface SalesRepresentativeCardProps {
+  name: string;
+  status: 'active' | 'inactive' | 'on leave'; // Explicitly define possible string literal values
+  email: string;
+  phone: string;
+  totalSales: string;
+  avatarUrl?: string; // Optional prop
+}
+
 // SalesRepresentativeCard component (now defined within this file)
 const SalesRepresentativeCard = ({
   name,
@@ -13,7 +23,7 @@ const SalesRepresentativeCard = ({
   phone,
   totalSales, // e.g., "$425K"
   avatarUrl, // Optional: URL for a user avatar image
-}) => {
+}: SalesRepresentativeCardProps) => { // Apply the interface here
   const avatarInitial = name ? name.charAt(0).toUpperCase() : '';
 
   // Determine status color and icon
@@ -91,7 +101,7 @@ const SalesRepresentativeCard = ({
 };
 
 // Dummy data for sales representatives
-const salesRepresentativesData = [
+const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the interface to the data array
   {
     name: "John Smith",
     status: "active",
@@ -142,7 +152,7 @@ const SalesDashboard = () => {
     setSearchTerm(event.target.value);
   };
 
-  const handleFilterClick = (status) => {
+  const handleFilterClick = (status: string) => { // Explicitly type 'status' parameter
     setFilterStatus(status.toLowerCase());
   };
 
