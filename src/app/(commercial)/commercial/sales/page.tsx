@@ -2,11 +2,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, Plus, Mail, Phone, User, CheckCircle, XCircle, Clock, Building, Blocks, ShoppingCart, LineChart, DollarSign } from 'lucide-react'; // Lucide icons
+// Removed unused Lucide icons to resolve compilation errors/warnings
+import { Search, Plus, Mail, Phone, User, CheckCircle, XCircle, Clock } from 'lucide-react';
 
 // SalesRepresentativeCard component (now defined within this file)
 const SalesRepresentativeCard = ({
-  id,
+  id, // 'id' is used as a key in the parent map, so it's not truly unused in the React context.
   name,
   status, // "active", "inactive", "on leave"
   email,
@@ -37,12 +38,14 @@ const SalesRepresentativeCard = ({
   }
 
   return (
-    <div className="bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200"> {/* Updated background and border */}
+    <div className="bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           {/* User Avatar */}
           {avatarUrl ? (
+            // Warning: Using `<img>` could result in slower LCP and higher bandwidth.
+            // Consider using `<Image />` from `next/image` for optimization if layout allows.
             <img src={avatarUrl} alt={name} className="w-10 h-10 rounded-full object-cover mr-3" />
           ) : (
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
@@ -50,7 +53,7 @@ const SalesRepresentativeCard = ({
             </div>
           )}
           <div>
-            <h3 className="text-white font-semibold text-lg">{name}</h3> {/* Changed text color */}
+            <h3 className="text-white font-semibold text-lg">{name}</h3>
             <p className={`text-sm capitalize ${statusColor}`}>
               {statusIcon}
               {status}
@@ -66,22 +69,22 @@ const SalesRepresentativeCard = ({
       </div>
 
       {/* Contact Info */}
-      <div className="mb-4 border-t border-gray-800 pt-4"> {/* Changed border color */}
-        <p className="text-[#a0a0a0] text-sm flex items-center mb-1"> {/* Changed text color */}
-          <Mail size={16} className="mr-2 text-[#a0a0a0]" /> {/* Changed icon color */}
+      <div className="mb-4 border-t border-gray-800 pt-4">
+        <p className="text-[#a0a0a0] text-sm flex items-center mb-1">
+          <Mail size={16} className="mr-2 text-[#a0a0a0]" />
           {email}
         </p>
-        <p className="text-[#a0a0a0] text-sm flex items-center"> {/* Changed text color */}
-          <Phone size={16} className="mr-2 text-[#a0a0a0]" /> {/* Changed icon color */}
+        <p className="text-[#a0a0a0] text-sm flex items-center">
+          <Phone size={16} className="mr-2 text-[#a0a0a0]" />
           {phone}
         </p>
       </div>
 
       {/* Total Sales */}
-      <div className="flex justify-between items-center pt-4 border-t border-gray-800"> {/* Changed border color */}
+      <div className="flex justify-between items-center pt-4 border-t border-gray-800">
         <div>
-          <p className="text-[#a0a0a0] text-lg font-bold">Total Sales</p> {/* Changed text color */}
-          <p className="text-green-500 text-xl font-bold">{totalSales}</p> {/* Adjusted green shade */}
+          <p className="text-[#a0a0a0] text-lg font-bold">Total Sales</p>
+          <p className="text-green-500 text-xl font-bold">{totalSales}</p>
         </div>
       </div>
     </div>
@@ -212,6 +215,7 @@ const SalesDashboard = () => {
             <p className="text-2xl font-bold">78</p>
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
+            {/* Inline SVG for trending-up icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up text-[#121111]"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           </div>
         </div>
@@ -223,6 +227,7 @@ const SalesDashboard = () => {
             <p className="text-2xl font-bold">$1.5M</p>
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
+            {/* Inline SVG for dollar-sign icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-dollar-sign text-[#121111]"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
         </div>
