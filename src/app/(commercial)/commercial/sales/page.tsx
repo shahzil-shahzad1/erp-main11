@@ -7,7 +7,6 @@ import { Search, Plus, Mail, Phone, User, CheckCircle, XCircle, Clock } from 'lu
 
 // SalesRepresentativeCard component (now defined within this file)
 const SalesRepresentativeCard = ({
-  id, // 'id' is used as a key in the parent map, so it's not truly unused in the React context.
   name,
   status, // "active", "inactive", "on leave"
   email,
@@ -94,7 +93,6 @@ const SalesRepresentativeCard = ({
 // Dummy data for sales representatives
 const salesRepresentativesData = [
   {
-    id: 1,
     name: "John Smith",
     status: "active",
     email: "john.smith@largify.com",
@@ -103,7 +101,6 @@ const salesRepresentativesData = [
     avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=JS", // Blue
   },
   {
-    id: 2,
     name: "Sarah Johnson",
     status: "active",
     email: "sarah.johnson@largify.com",
@@ -112,7 +109,6 @@ const salesRepresentativesData = [
     avatarUrl: "https://placehold.co/40x40/38A169/ffffff?text=SJ", // Green
   },
   {
-    id: 3,
     name: "Mike Chen",
     status: "inactive",
     email: "mike.chen@largify.com",
@@ -121,7 +117,6 @@ const salesRepresentativesData = [
     avatarUrl: "https://placehold.co/40x40/E53E3E/ffffff?text=MC", // Red
   },
   {
-    id: 4,
     name: "Emily Davis",
     status: "on leave",
     email: "emily.davis@largify.com",
@@ -130,7 +125,6 @@ const salesRepresentativesData = [
     avatarUrl: "https://placehold.co/40x40/ECC94B/ffffff?text=ED", // Yellow
   },
   {
-    id: 5,
     name: "David Lee",
     status: "active",
     email: "david.lee@largify.com",
