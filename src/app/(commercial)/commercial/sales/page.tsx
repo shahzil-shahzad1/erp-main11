@@ -148,7 +148,8 @@ const SalesDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all'); // 'all', 'active', 'inactive', 'on leave'
 
-  const handleSearchChange = (event) => {
+  // Explicitly type the 'event' parameter for handleSearchChange
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
