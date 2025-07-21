@@ -7,7 +7,7 @@ export default function App() {
   const commercialOverviewCards = [
     {
       title: "Total Sales ",
-      amount: "$328K",
+      amount: "$328K. This month",
       // Placeholder image URL for sales
       image: "https://placehold.co/20x20/e5a004/121111?text=S",
       lmprofit: "+22.3%",
@@ -15,13 +15,12 @@ export default function App() {
       imagebg: "bg-[#e5a004]", // Orange/Gold
       icon: DollarSign, // Using DollarSign icon for Sales
       items: [
-        "• This month",
         "from last month"
       ]
     },
     {
       title: "Total Purchases ",
-      amount: "$231K",
+      amount: "$231K. This month",
       // Placeholder image URL for purchase
       image: "https://placehold.co/20x20/b16a04/121111?text=P",
       lmprofit: "+22.3%",
@@ -29,13 +28,12 @@ export default function App() {
       imagebg: "bg-[#b16a04]", // Darker orange/gold
       icon: ShoppingCart, // Using ShoppingCart icon for Purchases
       items: [
-        "• This month",
         "from last month"
       ]
     },
     {
       title: "Gross Profit",
-      amount: " $97K",
+      amount: " $97K. This month",
       // Placeholder image URL for profit
       image: "https://placehold.co/20x20/e5a004/121111?text=G",
       lmprofit: "+22.3%",
@@ -43,13 +41,12 @@ export default function App() {
       imagebg: "bg-[#e5a004]", // Orange/Gold
       icon: LineChart, // Using LineChart icon for Gross Profit
       items: [
-        "• This month",
         "from last month"
       ]
     },
     {
       title: "Active Orders ",
-      amount: "$156K",
+      amount: "$156K. This month",
       // Placeholder image URL for orders
       image: "https://placehold.co/20x20/e5a004/121111?text=O",
       lmprofit: "-22.3%",
@@ -57,7 +54,6 @@ export default function App() {
       imagebg: "bg-[#e5a004]", // Orange/Gold
       icon: Package, // Using Package icon for Active Orders
       items: [
-        "• In progress",
         "from last month"
       ]
     }
@@ -105,12 +101,11 @@ export default function App() {
                     {card.items.map((item, index) => (
                       <li
                         key={index}
-                        className={`flex gap-1 ${index === 0 ? 'font-medium' : ''}`}
+                        className={`flex`}
                       >
-                        {index === 1 && (
                           <div>
                             {card.lmprofit.startsWith("+") ? (
-                              <span className="bg-green-700 text-green-300 rounded-3xl py-0.5 px-1 w-fit">
+                              <span className="bg-green-700 text-green-300 rounded-3xl py-0.5 px-1 w-fit mr-2">
                                 {card.lmprofit}
                               </span>
                             ) : (
@@ -119,7 +114,6 @@ export default function App() {
                               </span>
                             )}
                           </div>
-                        )}
                         {item}
                       </li>
                     ))}
