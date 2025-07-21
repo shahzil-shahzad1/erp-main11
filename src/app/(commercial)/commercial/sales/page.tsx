@@ -260,8 +260,8 @@ const SalesDashboard = () => {
       {/* Sales Representative Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredSalesReps.length > 0 ? (
-          filteredSalesReps.map((rep) => (
-            <SalesRepresentativeCard key={rep.id} {...rep} />
+          filteredSalesReps.map((rep, index) => (
+            <SalesRepresentativeCard key={index} {...rep} />
           ))
         ) : (
           <p className="text-[#a0a0a0] text-center col-span-full py-10">No matching sales representatives found.</p>
