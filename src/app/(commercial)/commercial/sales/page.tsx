@@ -196,7 +196,7 @@ const SalesDashboard = () => {
         {cards.map((card, index)=>{
           const IconComponent = card.icon;
           return (
-        <div className="bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800 hover:scale-[1.05] transition-all duration-200" key={card.title}> {/* Added key prop here */}
+        <div className="bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800 hover:scale-[1.03] transition-all duration-200" key={card.title}> {/* Added key prop here */}
           <div>
             <p className="text-sm text-[#a0a0a0]">{card.title}</p>
             <p className="text-2xl font-bold">{card.value}</p>
