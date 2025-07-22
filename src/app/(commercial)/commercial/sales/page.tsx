@@ -7,6 +7,7 @@ import { Search, Plus, Mail, Phone, CheckCircle, XCircle, Clock, DollarSign, Use
 
 // Define the interface for SalesRepresentativeCard props
 interface SalesRepresentativeCardProps {
+  id: number; // Added id to props interface as it's used for key
   name: string;
   status: 'active' | 'inactive' | 'on leave'; // Explicitly define possible string literal values
   email: string;
@@ -103,6 +104,7 @@ const SalesRepresentativeCard = ({
 // Dummy data for sales representatives
 const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the interface to the data array
   {
+    id: 1, // Added unique id
     name: "John Smith",
     status: "active",
     email: "john.smith@largify.com",
@@ -111,6 +113,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=JS", // Blue
   },
   {
+    id: 2, // Added unique id
     name: "Sarah Johnson",
     status: "active",
     email: "sarah.johnson@largify.com",
@@ -119,6 +122,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     avatarUrl: "https://placehold.co/40x40/38A169/ffffff?text=SJ", // Green
   },
   {
+    id: 3, // Added unique id
     name: "Mike Chen",
     status: "inactive",
     email: "mike.chen@largify.com",
@@ -127,6 +131,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     avatarUrl: "https://placehold.co/40x40/E53E3E/ffffff?text=MC", // Red
   },
   {
+    id: 4, // Added unique id
     name: "Emily Davis",
     status: "on leave",
     email: "emily.davis@largify.com",
@@ -135,6 +140,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     avatarUrl: "https://placehold.co/40x40/ECC94B/ffffff?text=ED", // Yellow
   },
   {
+    id: 5, // Added unique id
     name: "David Lee",
     status: "active",
     email: "david.lee@largify.com",
@@ -143,6 +149,13 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=DL", // Blue
   },
 ];
+
+const cards = [
+  {title: "Sales Representatives", value: "5", icon: UsersRound},
+  {title: "Active Representatives", value: "3", icon: CheckCircle},
+  {title: "Total Deals", value: "78", icon: HeartHandshake},
+  {title: "Total Reveneue", value: "$1.5M", icon: DollarSign},
+]
 
 const SalesDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -182,7 +195,7 @@ const SalesDashboard = () => {
         </div>
         <button
           onClick={handleAddSalesRep}
-          className="flex items-center px-6 py-2 bg-[#b16a04] text-white rounded-lg shadow-md hover:bg-[#e5a004] focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:ring-opacity-75 transition-all duration-200"
+          className="flex items-center px-6 py-2 bg-[#b16a04] text-white rounded-lg shadow-md hover:bg-[#e5a004] focus:outline-none focus:ring-2 focus:ring-[#e5a504] focus:ring-opacity-75 transition-all duration-200"
         >
           <Plus size={20} className="mr-2" />
           Add Sales Rep
@@ -192,50 +205,20 @@ const SalesDashboard = () => {
       {/* Overview Cards (Top Row) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {/* Total Sales Reps Card */}
-        <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
+        {cards.map((card, index)=>{
+          const IconComponent = card.icon;
+          return (
+        <div className="bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800 hover:scale-[1.05] transition-all duration-200" key={card.title}> {/* Added key prop here */}
           <div>
-            <p className="text-sm text-[#a0a0a0]">Sales Representatives</p>
-            <p className="text-2xl font-bold">{salesRepresentativesData.length}</p>
+            <p className="text-sm text-[#a0a0a0]">{card.title}</p>
+            <p className="text-2xl font-bold">{card.value}</p>
           </div>
-          <div className="bg-[#e5a004] p-3 rounded-full">
-            <UsersRound size={24} className="text-[#121111]" />
+          <div className="p-3 rounded-2xl bg-orange-900/30 hover:bg-orange-800/50 transition-all duration-200">
+            <IconComponent size={24} className="text-orange-500" />
           </div>
         </div>
-
-        {/* Active Reps Card */}
-        <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
-          <div>
-            <p className="text-sm text-[#a0a0a0]">Active Representatives</p>
-            <p className="text-2xl font-bold">{salesRepresentativesData.filter(rep => rep.status === 'active').length}</p>
-          </div>
-          <div className="bg-[#e5a004] p-3 rounded-full">
-            <CheckCircle size={24} className="text-[#121111]" />
-          </div>
-        </div>
-
-        {/* Total Deals Card */}
-        <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
-          <div>
-            <p className="text-sm text-[#a0a0a0]">Total Deals</p>
-            <p className="text-2xl font-bold">78</p>
-          </div>
-          <div className="bg-[#e5a004] p-3 rounded-full">
-            {/* Inline SVG for trending-up icon */}
-            <HeartHandshake size={25} className="text-[#121111]" />
-          </div>
-        </div>
-
-        {/* Total Revenue Card */}
-        <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
-          <div>
-            <p className="text-sm text-[#a0a0a0]">Total Revenue</p>
-            <p className="text-2xl font-bold">$1.5M</p>
-          </div>
-          <div className="bg-[#e5a004] p-3 rounded-full">
-            {/* Inline SVG for dollar-sign icon */}
-            <DollarSign size={24} className="text-[#121111]" />
-          </div>
-        </div>
+        )}
+        )}
       </div>
 
       {/* Search and Filter Section */}
@@ -272,7 +255,7 @@ const SalesDashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredSalesReps.length > 0 ? (
           filteredSalesReps.map((rep, index) => (
-            <SalesRepresentativeCard key={index} {...rep} />
+            <SalesRepresentativeCard key={rep.id} {...rep} /> // Changed key to rep.id
           ))
         ) : (
           <p className="text-[#a0a0a0] text-center col-span-full py-10">No matching sales representatives found.</p>
