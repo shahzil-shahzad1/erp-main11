@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState } from 'react';
-// Removed unused Lucide icons to resolve compilation errors/warnings
 import { Search, Plus, Mail, Phone, CheckCircle, XCircle, Clock, DollarSign, UsersRound, HeartHandshake  } from 'lucide-react';
 
 // Define the interface for SalesRepresentativeCard props
@@ -40,7 +39,7 @@ const SalesRepresentativeCard = ({
       statusIcon = <XCircle size={16} className="inline-block mr-1" />;
       break;
     case 'on leave':
-      statusColor = 'text-yellow-500'; // Adjusted
+      statusColor = 'text-yellow-500';
       statusIcon = <Clock size={16} className="inline-block mr-1" />;
       break;
     default:
@@ -49,13 +48,9 @@ const SalesRepresentativeCard = ({
 
   return (
     <div className="bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
-      {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          {/* User Avatar */}
           {avatarUrl ? (
-            // Warning: Using `<img>` could result in slower LCP and higher bandwidth.
-            // Consider using `<Image />` from `next/image` for optimization if layout allows.
             <img src={avatarUrl} alt={name} className="w-10 h-10 rounded-full object-cover mr-3" />
           ) : (
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
@@ -101,8 +96,7 @@ const SalesRepresentativeCard = ({
   );
 };
 
-// Dummy data for sales representatives
-const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the interface to the data array
+const salesRepresentativesData: SalesRepresentativeCardProps[] = [
   {
     id: 1, // Added unique id
     name: "John Smith",
@@ -110,7 +104,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     email: "john.smith@largify.com",
     phone: "+1 (555) 123-4567",
     totalSales: "$425K",
-    avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=JS", // Blue
+    avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=JS",
   },
   {
     id: 2, // Added unique id
@@ -119,7 +113,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     email: "sarah.johnson@largify.com",
     phone: "+1 (555) 234-5678",
     totalSales: "$380K",
-    avatarUrl: "https://placehold.co/40x40/38A169/ffffff?text=SJ", // Green
+    avatarUrl: "https://placehold.co/40x40/38A169/ffffff?text=SJ",
   },
   {
     id: 3, // Added unique id
@@ -128,7 +122,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     email: "mike.chen@largify.com",
     phone: "+1 (555) 345-6789",
     totalSales: "$290K",
-    avatarUrl: "https://placehold.co/40x40/E53E3E/ffffff?text=MC", // Red
+    avatarUrl: "https://placehold.co/40x40/E53E3E/ffffff?text=MC",
   },
   {
     id: 4, // Added unique id
@@ -137,7 +131,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     email: "emily.davis@largify.com",
     phone: "+1 (555) 456-7890",
     totalSales: "$210K",
-    avatarUrl: "https://placehold.co/40x40/ECC94B/ffffff?text=ED", // Yellow
+    avatarUrl: "https://placehold.co/40x40/ECC94B/ffffff?text=ED", 
   },
   {
     id: 5, // Added unique id
@@ -146,7 +140,7 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [ // Apply the 
     email: "david.lee@largify.com",
     phone: "+1 (555) 567-8901",
     totalSales: "$510K",
-    avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=DL", // Blue
+    avatarUrl: "https://placehold.co/40x40/4299E1/ffffff?text=DL", 
   },
 ];
 
@@ -159,20 +153,17 @@ const cards = [
 
 const SalesDashboard = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterStatus, setFilterStatus] = useState('all'); // 'all', 'active', 'inactive', 'on leave'
-
-  // Explicitly type the 'event' parameter for handleSearchChange
+  const [filterStatus, setFilterStatus] = useState('all'); 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleFilterClick = (status: string) => { // Explicitly type 'status' parameter
+  const handleFilterClick = (status: string) => {
     setFilterStatus(status.toLowerCase());
   };
 
   const handleAddSalesRep = () => {
     alert("Add Sales Rep button clicked!");
-    // Implement logic to add a new sales representative (e.g., open a modal form)
   };
 
   const filteredSalesReps = salesRepresentativesData.filter(rep => {
@@ -201,10 +192,7 @@ const SalesDashboard = () => {
           Add Sales Rep
         </button>
       </div>
-
-      {/* Overview Cards (Top Row) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {/* Total Sales Reps Card */}
         {cards.map((card, index)=>{
           const IconComponent = card.icon;
           return (
