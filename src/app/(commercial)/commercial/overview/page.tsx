@@ -12,7 +12,7 @@ export default function App() {
       image: "https://placehold.co/20x20/e5a004/121111?text=S",
       lmprofit: "+22.3%",
       bg: "bg-[#1a1a1a]", // Very dark gray for primary cards
-      imagebg: "bg-[#e5a004]", // Orange/Gold
+      imagebg: "bg-orange-900/30 group-hover:bg-orange-800/50 transition-colors duration-200", // Orange/Gold
       icon: DollarSign, // Using DollarSign icon for Sales
       items: [
         "from last month"
@@ -25,7 +25,7 @@ export default function App() {
       image: "https://placehold.co/20x20/b16a04/121111?text=P",
       lmprofit: "+22.3%",
       bg: "bg-[#1a1a1a]", // Very dark gray for primary cards
-      imagebg: "bg-[#b16a04]", // Darker orange/gold
+      imagebg: "bg-orange-900/30 group-hover:bg-orange-800/50 transition-colors duration-200", // Darker orange/gold
       icon: ShoppingCart, // Using ShoppingCart icon for Purchases
       items: [
         "from last month"
@@ -38,7 +38,7 @@ export default function App() {
       image: "https://placehold.co/20x20/e5a004/121111?text=G",
       lmprofit: "+22.3%",
       bg: "bg-[#1a1a1a]", // Very dark gray for primary cards
-      imagebg: "bg-[#e5a004]", // Orange/Gold
+      imagebg: "bg-orange-900/30 group-hover:bg-orange-800/50 transition-colors duration-200", // Orange/Gold
       icon: LineChart, // Using LineChart icon for Gross Profit
       items: [
         "from last month"
@@ -51,7 +51,7 @@ export default function App() {
       image: "https://placehold.co/20x20/e5a004/121111?text=O",
       lmprofit: "-22.3%",
       bg: "bg-[#1a1a1a]", // Very dark gray for primary cards
-      imagebg: "bg-[#e5a004]", // Orange/Gold
+      imagebg: "bg-orange-900/30 group-hover:bg-orange-800/50 transition-colors duration-200", // Orange/Gold
       icon: Package, // Using Package icon for Active Orders
       items: [
         "from last month"
@@ -68,8 +68,8 @@ export default function App() {
         <div className="mb-6">
           <div className="flex justify-between items-center flex-wrap gap-4">
             <div className="flex gap-3 items-center">
-              <div className="bg-[#e5a004] p-2.5 rounded-xl">
-                <Building className="w-6 h-6 text-[#121111]" />
+              <div className="bg-[#1a1a1a] p-2.5 rounded-xl">
+                <Building className="w-6 h-6 text-orange-500" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">Commercial Overview</h1>
@@ -121,7 +121,7 @@ export default function App() {
                 </div>
                 <div className={`p-3 rounded-2xl ${card.imagebg} mt-3 sm:mt-0 self-end sm:self-auto`}>
                   {/* Render the Lucide React icon component */}
-                  <IconComponent className="w-5 h-5 text-[#121111]" />
+                  <IconComponent className="w-5 h-5 text-orange-500" />
                 </div>
               </div>
             );
@@ -134,8 +134,8 @@ export default function App() {
         <div className="flex flex-col gap-4 bg-[#212121] px-10 py-4 rounded-lg">
           {/* Header Section */}
           <div className="flex items-center gap-3">
-            <div className="bg-[#b16a04] p-2 rounded-lg">
-              <DollarSign className="w-5 h-5 text-white" />
+            <div className="bg-[#1a1a1a] p-2 rounded-lg">
+              <DollarSign className="w-5 h-5 text-orange-500" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white">Quick Actions</h3>
@@ -154,7 +154,7 @@ export default function App() {
                 >
                   <div className={`p-3 rounded-2xl ${card.imagebg}`}>
                     {/* Render the Lucide React icon component for Quick Actions */}
-                    <IconComponent className="w-7 h-7 text-[#121111]" />
+                    <IconComponent className="w-7 h-7 text-orange-500" />
                   </div>
                   <div className="font-medium text-center text-[#a0a0a0]">{card.title}</div>
                 </div>
