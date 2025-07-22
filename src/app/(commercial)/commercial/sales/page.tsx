@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 // Removed unused Lucide icons to resolve compilation errors/warnings
-import { Search, Plus, Mail, Phone, User, CheckCircle, XCircle, Clock } from 'lucide-react';
+import { Search, Plus, Mail, Phone, CheckCircle, XCircle, Clock, DollarSign, UsersRound, HeartHandshake  } from 'lucide-react';
 
 // Define the interface for SalesRepresentativeCard props
 interface SalesRepresentativeCardProps {
@@ -194,18 +194,18 @@ const SalesDashboard = () => {
         {/* Total Sales Reps Card */}
         <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
           <div>
-            <p className="text-sm text-[#a0a0a0]">Total Sales Reps</p>
+            <p className="text-sm text-[#a0a0a0]">Sales Representatives</p>
             <p className="text-2xl font-bold">{salesRepresentativesData.length}</p>
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
-            <User size={24} className="text-[#121111]" />
+            <UsersRound size={24} className="text-[#121111]" />
           </div>
         </div>
 
         {/* Active Reps Card */}
         <div className="bg-[#1a1a1a] text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800">
           <div>
-            <p className="text-sm text-[#a0a0a0]">Active Reps</p>
+            <p className="text-sm text-[#a0a0a0]">Active Representatives</p>
             <p className="text-2xl font-bold">{salesRepresentativesData.filter(rep => rep.status === 'active').length}</p>
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
@@ -221,7 +221,7 @@ const SalesDashboard = () => {
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
             {/* Inline SVG for trending-up icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up text-[#121111]"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <HeartHandshake size={25} className="text-[#121111]" />
           </div>
         </div>
 
@@ -233,7 +233,7 @@ const SalesDashboard = () => {
           </div>
           <div className="bg-[#e5a004] p-3 rounded-full">
             {/* Inline SVG for dollar-sign icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-dollar-sign text-[#121111]"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <DollarSign size={24} className="text-[#121111]" />
           </div>
         </div>
       </div>
