@@ -1,6 +1,6 @@
 import React from 'react';
 // Importing Lucide React icons
-import { Building, DollarSign, Blocks, ShoppingCart, Package, LineChart } from 'lucide-react'; // Removed 'Wallet' as it was unused
+import { SearchCheck, DollarSign, Blocks, ShoppingCart, Package, LineChart, Zap } from 'lucide-react'; // Removed 'Wallet' as it was unused
 
 // Main App component
 export default function App() {
@@ -69,7 +69,7 @@ export default function App() {
           <div className="flex justify-between items-center flex-wrap gap-4">
             <div className="flex gap-3 items-center">
               <div className="bg-[#1a1a1a] p-2.5 rounded-xl">
-                <Building className="w-6 h-6 text-orange-500" />
+                <SearchCheck className="w-6 h-6 text-orange-500" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">Commercial Overview</h1>
@@ -135,7 +135,7 @@ export default function App() {
           {/* Header Section */}
           <div className="flex items-center gap-3">
             <div className="bg-[#1a1a1a] p-2 rounded-lg">
-              <DollarSign className="w-5 h-5 text-orange-500" />
+              <Zap className="w-5 h-5 text-orange-500" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white">Quick Actions</h3>
