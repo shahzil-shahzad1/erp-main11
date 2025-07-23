@@ -155,7 +155,7 @@ export default function App() {
               return (
                 <div
                   key={card.title} // Using card.title as key for consistency and uniqueness
-                  className={`flex flex-col items-center gap-3 p-6 rounded-lg border-[1px] ${card.borderColor} dark:border-zinc-900 transition-all hover:shadow-md ${card.bg} dark:bg-card w-full sm:w-[calc(40%-0.5rem)] md:w-[calc(22.33%-0.66rem)]  hover:scale-[1.05] duration-200 cursor-pointer`}
+                  className={`flex flex-col items-center gap-3 p-6 rounded-lg border-[1px] ${card.borderColor} dark:border-zinc-900 transition-all hover:shadow-md ${card.bg} dark:bg-gradient-to-br dark:bg-[#1a1a1a] dark:bg-[#1a1919] w-full sm:w-[calc(40%-0.5rem)] md:w-[calc(22.33%-0.66rem)]  hover:scale-[1.05] duration-200 cursor-pointer`}
                 >
                   <div className={`p-3 rounded-2xl ${card.imageBg} dark:bg-accent`}>
                     <IconComponent className={`w-7 h-7 ${card.iconColor}`} />
