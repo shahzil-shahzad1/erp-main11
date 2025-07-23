@@ -126,7 +126,7 @@ export default function App() {
                   </ul>
                 </div>
                 <div className={`p-3 rounded-2xl ${card.imageBg} mt-3 sm:mt-0 self-end sm:self-auto`}>
-                  <IconComponent className={`w-5 h-5 ${card.iconColor} dark:text-accent-foreground`} />
+                  <IconComponent className={`w-5 h-5 ${card.iconColor} dark:text-orange-500`} />
                 </div>
               </div>
             );
