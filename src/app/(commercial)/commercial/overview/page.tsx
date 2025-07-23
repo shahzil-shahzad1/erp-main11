@@ -96,7 +96,7 @@ export default function App() {
             const IconComponent = card.icon;
             return (
               <div
-                className={`relative border ${card.borderColor} dark:border-zinc-900 rounded-lg p-5 flex flex-col sm:flex-row justify-between items-start ${card.bg} dark:bg-gradient-to-br dark:bg-[#1a1a1a] dark:bg-[#1a1919] hover:shadow-sm transition-all duration-200 cursor-pointer overflow-hidden group hover:scale-[1.03]`}
+                className={`relative border ${card.borderColor} dark:border-zinc-900 rounded-lg p-5 flex flex-col sm:flex-row justify-between items-start ${card.bg} dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:to-[#1a1919] hover:shadow-sm transition-all duration-200 cursor-pointer overflow-hidden group hover:scale-[1.03]`}
                 key={card.title}
               >
                 {/* Content */}
@@ -155,7 +155,7 @@ export default function App() {
               return (
                 <div
                   key={card.title} // Using card.title as key for consistency and uniqueness
-                  className={`flex flex-col items-center gap-3 p-6 rounded-lg border-[1px] ${card.borderColor} dark:border-zinc-900 transition-all hover:shadow-md ${card.bg} dark:bg-gradient-to-br dark:bg-[#1a1a1a] dark:bg-[#1a1919] w-full sm:w-[calc(40%-0.5rem)] md:w-[calc(22.33%-0.66rem)]  hover:scale-[1.05] duration-200 cursor-pointer`}
+                  className={`flex flex-col items-center gap-3 p-6 rounded-lg border-[1px] ${card.borderColor} dark:border-zinc-900 transition-all hover:shadow-md ${card.bg} dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:to-[#1a1919] w-full sm:w-[calc(40%-0.5rem)] md:w-[calc(22.33%-0.66rem)]  hover:scale-[1.05] duration-200 cursor-pointer`}
                 >
                   <div className={`p-3 rounded-2xl ${card.imageBg} dark:bg-accent`}>
                     <IconComponent className={`w-7 h-7 ${card.iconColor}`} />
