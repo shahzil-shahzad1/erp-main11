@@ -96,7 +96,7 @@ export default function App() {
             const IconComponent = card.icon;
             return (
               <div
-                className={`relative border ${card.borderColor} dark:border-zinc-900 rounded-lg p-5 flex flex-col sm:flex-row justify-between items-start ${card.bg} dark:bg-[#1a1a1a] hover:shadow-sm transition-all duration-200 cursor-pointer overflow-hidden group hover:scale-[1.03]`}
+                className={`relative border ${card.borderColor} dark:border-zinc-900 rounded-lg p-5 flex flex-col sm:flex-row justify-between items-start ${card.bg} dark:bg-gradient-to-br dark:bg-[#1a1a1a] dark:bg-[#1a1919] hover:shadow-sm transition-all duration-200 cursor-pointer overflow-hidden group hover:scale-[1.03]`}
                 key={card.title}
               >
                 {/* Content */}
