@@ -54,7 +54,7 @@ const SalesRepresentativeCard = ({
             <img src={avatarUrl} alt={name} className="w-10 h-10 rounded-full object-cover mr-3" />
           ) : (
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
-              {avatarInitial || <User size={24} />}
+              {avatarInitial || <UsersRound size={24} />}
             </div>
           )}
           <div>
