@@ -134,7 +134,7 @@ export default function App() {
         </div>
 
         {/* Divider */}
-        <div className={`border-t border-gray-200 dark:border-zinc-900 my-6`}></div>
+        <div className={`border-t border-gray-200 dark:border-[#1a1a1a] my-6`}></div>
 
         <div className={`flex flex-col gap-4 bg-white dark:bg-card px-10 py-4 rounded-lg border border-gray-200 dark:border-border`}>
           {/* Header Section */}
