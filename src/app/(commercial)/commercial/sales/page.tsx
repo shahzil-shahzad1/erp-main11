@@ -47,7 +47,7 @@ const SalesRepresentativeCard = ({
   }
 
   return (
-    <div className="bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           {avatarUrl ? (
@@ -58,7 +58,7 @@ const SalesRepresentativeCard = ({
             </div>
           )}
           <div>
-            <h3 className="text-white font-semibold text-lg">{name}</h3>
+            <h3 className="text-zinc-900 dark:text-white font-semibold text-lg">{name}</h3>
             <p className={`text-sm capitalize ${statusColor}`}>
               {statusIcon}
               {status}
@@ -75,12 +75,12 @@ const SalesRepresentativeCard = ({
 
       {/* Contact Info */}
       <div className="mb-4 border-t border-gray-800 pt-4">
-        <p className="text-[#a0a0a0] text-sm flex items-center mb-1">
-          <Mail size={16} className="mr-2 text-[#a0a0a0]" />
+        <p className="text-zinc-900 dark:text-[#a0a0a0] text-sm flex items-center mb-1">
+          <Mail size={16} className="mr-2 text-zinc-900 dark:text-[#a0a0a0]" />
           {email}
         </p>
-        <p className="text-[#a0a0a0] text-sm flex items-center">
-          <Phone size={16} className="mr-2 text-[#a0a0a0]" />
+        <p className="text-zinc-900 dark:text-[#a0a0a0] text-sm flex items-center">
+          <Phone size={16} className="mr-2 text-zinc-900 dark:text-[#a0a0a0]" />
           {phone}
         </p>
       </div>
@@ -88,7 +88,7 @@ const SalesRepresentativeCard = ({
       {/* Total Sales */}
       <div className="flex justify-between items-center pt-4 border-t border-gray-800">
         <div>
-          <p className="text-[#a0a0a0] text-lg font-bold">Total Sales</p>
+          <p className="text-zinc-900 dark:text-[#a0a0a0] text-lg font-bold">Total Sales</p>
           <p className="text-green-500 text-xl font-bold">{totalSales}</p>
         </div>
       </div>
@@ -145,10 +145,18 @@ const salesRepresentativesData: SalesRepresentativeCardProps[] = [
 ];
 
 const cards = [
-  {title: "Sales Representatives", value: "5", icon: UsersRound},
-  {title: "Active Representatives", value: "3", icon: CheckCircle},
-  {title: "Total Deals", value: "78", icon: HeartHandshake},
-  {title: "Total Reveneue", value: "$1.5M", icon: DollarSign},
+  {title: "Sales Representatives", value: "5", icon: UsersRound, 
+  textColor: "text-zinc-600 dark:text-zinc-200",
+  subTextColor: "text-zinc-900 dark:text-white",},
+  {title: "Active Representatives", value: "3", icon: CheckCircle, 
+  textColor: "text-zinc-600 dark:text-zinc-200",
+  subTextColor: "text-zinc-900 dark:text-white",},
+  {title: "Total Deals", value: "78", icon: HeartHandshake, 
+  textColor: "text-zinc-600 dark:text-zinc-200",
+  subTextColor: "text-zinc-900 dark:text-white",},
+  {title: "Total Reveneue", value: "$1.5M", icon: DollarSign, 
+  textColor: "text-zinc-600 dark:text-zinc-200",
+  subTextColor: "text-zinc-900 dark:text-white",},
 ]
 
 const SalesDashboard = () => {
@@ -177,12 +185,12 @@ const SalesDashboard = () => {
   });
 
   return (
-    <div className="bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 text-white font-sans">
+    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 text-white font-sans">
       {/* Top Section: Dashboard Header and Add Sales Rep Button */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <div className="text-white text-center md:text-left">
-          <h1 className="text-3xl font-bold">Sales Department</h1>
-          <p className="text-[#a0a0a0] text-sm">Manage sales representatives and performance</p>
+          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">Sales Department</h1>
+          <p className="text-zinc-800 dark:text-zinc-200 text-sm">Manage sales representatives and performance</p>
         </div>
         <button
           onClick={handleAddSalesRep}
@@ -196,13 +204,13 @@ const SalesDashboard = () => {
         {cards.map((card, index)=>{
           const IconComponent = card.icon;
           return (
-        <div className="bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border border-gray-800 hover:scale-[1.03] transition-all duration-200" key={card.title}> {/* Added key prop here */}
+        <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border dark:border-zinc-900 group hover:scale-[1.03] transition-all duration-200" key={card.title}> {/* Added key prop here */}
           <div>
-            <p className="text-sm text-[#a0a0a0]">{card.title}</p>
-            <p className="text-2xl font-bold">{card.value}</p>
+            <p className={`text-sm ${card.textColor}`}>{card.title}</p>
+            <p className={`text-2xl font-bold ${card.subTextColor}`}>{card.value}</p>
           </div>
-          <div className="p-3 rounded-2xl bg-orange-900/30 hover:bg-orange-800/50 transition-all duration-200">
-            <IconComponent size={24} className="text-orange-500" />
+          <div className="p-3 rounded-2xl bg-yellow-100 group-hover:bg-yellow-200 dark:bg-orange-900/30 dark:group-hover:bg-orange-800/50 transition-all duration-200">
+            <IconComponent size={24} className="text-yellow-600 dark:text-orange-500" />
           </div>
         </div>
         )}
@@ -210,12 +218,12 @@ const SalesDashboard = () => {
       </div>
 
       {/* Search and Filter Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-center bg-[#1a1a1a] rounded-xl shadow-lg p-4 mb-6 gap-4 border border-gray-800">
+      <div className="flex flex-col sm:flex-row justify-between items-center border-gray-200 dark:bg-[#1a1a1a] rounded-xl shadow-lg p-4 mb-6 gap-4 border border-gray-800">
         <div className="relative flex items-center w-full sm:w-1/2 lg:w-1/3">
           <input
             type="text"
             placeholder="Search sales representatives"
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-[#212121] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent text-white text-sm shadow-sm"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 dark:bg-[#212121] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent text-zinc-900 dark:text-white  text-sm shadow-sm"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -230,7 +238,7 @@ const SalesDashboard = () => {
               className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200
                 ${filterStatus === (status === 'All' ? 'all' : status.toLowerCase())
                   ? 'bg-[#e5a004] text-[#121111] shadow-md'
-                  : 'bg-[#212121] text-[#a0a0a0] hover:bg-[#2a2a2a]'
+                  : 'bg-gray-400 text-zinc-900 hover:bg-gray-300 dark:bg-[#212121] dark:text-[#a0a0a0] dark:hover:bg-[#2a2a2a]'
                 }`}
             >
               {status}
@@ -242,7 +250,7 @@ const SalesDashboard = () => {
       {/* Sales Representative Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredSalesReps.length > 0 ? (
-          filteredSalesReps.map((rep, index) => (
+          filteredSalesReps.map((rep) => (
             <SalesRepresentativeCard key={rep.id} {...rep} /> // Changed key to rep.id
           ))
         ) : (
