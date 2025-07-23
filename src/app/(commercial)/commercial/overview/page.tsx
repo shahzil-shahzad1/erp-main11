@@ -68,7 +68,7 @@ export default function App() {
     <>
       {/* The 'dark' class is expected to be managed by an external toggle (e.g., your navbar) on an ancestor element. */}
       {/* Styling now directly uses light-mode-class dark:dark-mode-class */}
-      <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:from-red-500/[0.05] dark:via-transparent dark:to-blue-500/[0.05] min-h-screen p-6 md:p-10 font-sans relative inset-0">
+      <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 md:p-10 font-sans relative inset-0">
 
         {/* Header Section */}
         <div className="mb-6">
