@@ -47,7 +47,7 @@ const SalesRepresentativeCard = ({
   }
 
   return (
-    <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-[#1a1a1a] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
+    <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:to-[#1a1919] rounded-xl shadow-lg p-6 w-full max-w-sm mx-auto my-4 border border-gray-800 hover:shadow-xl transition-shadow duration-200">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           {avatarUrl ? (
@@ -204,7 +204,7 @@ const SalesDashboard = () => {
         {cards.map((card, index)=>{
           const IconComponent = card.icon;
           return (
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-[#1a1a1a] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border dark:border-zinc-900 group hover:scale-[1.03] transition-all duration-200" key={card.title}> {/* Added key prop here */}
+        <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-gradient-to-br dark:from-[#1a1a1a] dark:to-[#1a1919] relative cursor-pointer text-white rounded-xl shadow-lg p-5 flex items-center justify-between border dark:border-zinc-900 group hover:scale-[1.03] transition-all duration-200" key={card.title}> {/* Added key prop here */}
           <div>
             <p className={`text-sm ${card.textColor}`}>{card.title}</p>
             <p className={`text-2xl font-bold ${card.subTextColor}`}>{card.value}</p>
